@@ -8,6 +8,11 @@ do
     esac
 done
 
+if [[ -z "${NVM_VERSION}" ]]; then
+    echo "Error: Option -v (NVM_VERSION) cannot be empty, exiting with status 1"
+    exit 1
+fi
+
 # install
 curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
 
