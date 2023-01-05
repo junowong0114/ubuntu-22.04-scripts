@@ -30,4 +30,10 @@ sudo update-alternatives --remove <name> <path>
 ### kubectl
 
 - Executables stored under `/opt/kubectl/`
-- Configure with `KUBECTL_VERSIONS` in `.env`
+- Configure with `KUBECTL_VERSIONS` and `DEFAULT_KUBECTL_VERSION` in `.env`
+
+### helm
+
+- Executables stored under `/opt/helm/`
+- Configure with `HELM_VERSIONS` and `DEFAULT_HELM_VERSION` in `.env`
+- See https://helm.sh/docs/topics/version_skew/ for helm-kubectl compatibility matrix
