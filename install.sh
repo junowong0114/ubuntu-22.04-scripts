@@ -17,6 +17,7 @@ $DIR_PATH/softwares/aws-cli.sh -d $DIR_PATH
 $DIR_PATH/softwares/kubectl.sh -d $DIR_PATH -v $KUBECTL_VERSIONS -u $DEFAULT_KUBECTL_VERSION
 $DIR_PATH/softwares/helm.sh -d $DIR_PATH -v $HELM_VERSIONS -u $DEFAULT_HELM_VERSION
 $DIR_PATH/softwares/tfenv.sh
+$DIR_PATH/softwares/k9s.sh -v $K9S_VERSION
 
 # configure git
 git config --global user.email "$GIT_USER_EMAIL"

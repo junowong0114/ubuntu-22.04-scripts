@@ -17,7 +17,7 @@ else
         eval "${BASH_RC_EXCERPT}"
     fi
 
-    echo "Installed tfenv version $(tfenv -v)"
+    echo "Installed tfenv version $($HOME/.tfenv/bin/tfenv -v)"
 fi
 
 $HOME/.tfenv/bin/tfenv install latest
