@@ -15,6 +15,7 @@ $DIR_PATH/softwares/nvm.sh -v $NVM_VERSION
 $DIR_PATH/softwares/aws-cli.sh -d $DIR_PATH
 $DIR_PATH/softwares/kubectl.sh -d $DIR_PATH -v $KUBECTL_VERSIONS -u $DEFAULT_KUBECTL_VERSION
 $DIR_PATH/softwares/helm.sh -d $DIR_PATH -v $HELM_VERSIONS -u $DEFAULT_HELM_VERSION
+npm install --global yarn
 
 # configure git
 git config --global user.email "$GIT_USER_EMAIL"
