@@ -6,6 +6,7 @@ Set up scripts for Ubuntu 22.04
 ```bash
 ./install.sh
 ```
+Restart bash shell afterwards
 
 ## New Scripts
 
@@ -18,7 +19,7 @@ Set up scripts for Ubuntu 22.04
 
 ### Node
 
-Managed with nvm: https://github.com/nvm-sh/nvm
+- Managed with nvm: https://github.com/nvm-sh/nvm
 
 ```bash
 # list local versions
@@ -39,7 +40,8 @@ nvm use <version>
 
 ### Terraform
 
-Managed with tfenvs: https://github.com/tfutils/tfenv
+- Managed with tfenv: https://github.com/tfutils/tfenv
+- By default use `latest` version
 
 ```bash
 # list local versions
