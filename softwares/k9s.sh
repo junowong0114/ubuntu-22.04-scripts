@@ -28,7 +28,7 @@ else
     echo "k9s-${K9S_VERSION} already exists, skip installation"
 fi
 
-BASH_RC_EXCERPT="export PATH=\"${BINARY_FULL_PATH}:$PATH\""
+BASH_RC_EXCERPT="export PATH=\"${BINARY_FULL_PATH}:\$PATH\""
 BASH_SCRIPT_CONFIGURED=$(cat ~/.bashrc | grep "${BASH_RC_EXCERPT}" || true)
 
 if [[ -z "${BASH_SCRIPT_CONFIGURED}" ]]; then
