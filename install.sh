@@ -22,3 +22,11 @@ $DIR_PATH/softwares/k9s.sh -v $K9S_VERSION
 # configure git
 git config --global user.email "$GIT_USER_EMAIL"
 git config --global user.name "$GIT_USER_NAME"
+
+# export path
+WIN_HOME_IN_BASHRC=$(cat "${HOME}/.bashrc" | grep "${WIN_HOME}" || true)
+if [[ -z "${WIN_HOME_IN_BASHRC}" ]]; then
+    echo "export WIN_HOME=${WIN_HOME}" >> $HOME/.bashrc
+fi
+
+echo "System initiation completed, please restart the shell now"
