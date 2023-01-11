@@ -13,11 +13,16 @@ if [[ -z "${DIR_PATH}" ]]; then
     exit 1
 fi
 
+if [[ ! -z $(command -V aws || true) ]]; then
+    echo "aws cli already exists, skip installation"
+    exit 0
+fi
+
 # install
 TMP_DIR="${DIR_PATH}/tmp"
 mkdir -p "${TMP_DIR}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "${TMP_DIR}/awscliv2.zip"
-unzip "${TMP_DIR}/awscliv2.zip" -d "${TMP_DIR}"
+unzip -q "${TMP_DIR}/awscliv2.zip" -d "${TMP_DIR}"
 
 AWS_BIN=$(command -v aws)
 if [[ -z "${AWS_BIN}" ]]; then
