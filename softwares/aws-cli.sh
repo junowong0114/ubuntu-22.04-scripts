@@ -1,5 +1,6 @@
 #/bin/bash
 set -eo pipefail
+set -x
 
 while getopts d: flag
 do
@@ -13,18 +14,13 @@ if [[ -z "${DIR_PATH}" ]]; then
     exit 1
 fi
 
-if [[ ! -z $(command -V aws || true) ]]; then
-    echo "aws cli already exists, skip installation"
-    exit 0
-fi
-
 # install
 TMP_DIR="${DIR_PATH}/tmp"
 mkdir -p "${TMP_DIR}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "${TMP_DIR}/awscliv2.zip"
 unzip -q "${TMP_DIR}/awscliv2.zip" -d "${TMP_DIR}"
 
-AWS_BIN=$(command -v aws)
+AWS_BIN=$(command -v aws || true)
 if [[ -z "${AWS_BIN}" ]]; then
     sudo "${TMP_DIR}"/aws/install
 else
