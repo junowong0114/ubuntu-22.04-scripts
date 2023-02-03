@@ -1,6 +1,5 @@
 #/bin/bash
 set -eo pipefail
-set -x
 
 while getopts d: flag
 do
