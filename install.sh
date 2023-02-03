@@ -9,6 +9,7 @@ source $DIR_PATH/.env
 # install softwares that needs sudo
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install zip unzip
+sudo apt-get install jq
 
 # install softwares
 $DIR_PATH/softwares/nvm.sh -v $NVM_VERSION
