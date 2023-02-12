@@ -8,6 +8,8 @@ if [[ ! -z "${INSTALLED}" ]]; then
     echo "tfenv is now at $(tfenv -v)"
 else
     git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv
+    echo 'trust-tfenv: yes' > ~/.tfenv/use-gpgv
+    chown 1000:1000 ~/.tfenv/use-gpgv
 
     BASH_RC_EXCERPT='export PATH="$HOME/.tfenv/bin:$PATH"'
     BASH_SCRIPT_CONFIGURED=$(cat ~/.bashrc/ | grep "${BASH_RC_EXCERPT}" || true)
