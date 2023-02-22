@@ -7,9 +7,14 @@ DIR_PATH=$(dirname "$path")
 source $DIR_PATH/.env
 
 # install softwares that needs sudo
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install zip unzip
-sudo apt-get install jq
+cat << EOF
+########################################
+Installing/Updating Linux packages
+########################################
+EOF
+sudo apt update -qq && sudo apt upgrade -yqq
+sudo apt install -yqq jq zip unzip
+printf "\nFinished installing/updating Linux packages\n\n"
 
 # install softwares
 $DIR_PATH/softwares/nvm.sh -v $NVM_VERSION
