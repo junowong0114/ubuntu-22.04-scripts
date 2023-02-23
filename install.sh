@@ -25,8 +25,11 @@ $DIR_PATH/softwares/helm.sh -d $DIR_PATH -v $HELM_VERSIONS -u $DEFAULT_HELM_VERS
 $DIR_PATH/softwares/tfenv.sh
 $DIR_PATH/softwares/k9s.sh -v $K9S_VERSION
 $DIR_PATH/softwares/pyenv.sh
+$DIR_PATH/softwares/sdkman.sh
+
+# install runtimes
 $DIR_PATH/runtime/python.sh -v $PYTHON_VERSIONS
-# $DIR_PATH/softwares/argocd.sh -d $DIR_PATH
+$DIR_PATH/runtime/python.sh -v $JAVA_SDK_VERSIONS
 
 # configure git
 git config --global user.email "$GIT_USER_EMAIL"
