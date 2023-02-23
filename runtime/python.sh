@@ -55,7 +55,7 @@ do
     set -e
 
     # Installation
-    pyenv install -v ${ver} --skip-existing > /dev/null
+    pyenv install -v ${ver} --skip-existing
     if [[ $i == 0 ]]
     then
         echo "Set Python ${ver} as default"
