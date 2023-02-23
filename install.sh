@@ -29,7 +29,7 @@ $DIR_PATH/softwares/sdkman.sh
 
 # install runtimes
 $DIR_PATH/runtime/python.sh -v $PYTHON_VERSIONS
-$DIR_PATH/runtime/python.sh -v $JAVA_SDK_VERSIONS
+$DIR_PATH/runtime/java_sdk.sh -v $JAVA_SDK_VERSIONS
 
 # configure git
 git config --global user.email "$GIT_USER_EMAIL"
