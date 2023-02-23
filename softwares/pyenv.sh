@@ -5,7 +5,7 @@ echo "Installing pyenv and python..."
 
 # reference: https://realpython.com/intro-to-pyenv/
 echo "Installing dependencies for building python from source..."
-sudo apt-get -qq install -y \
+sudo apt -qq install -y \
 make \
 build-essential \
 libssl-dev \
@@ -22,7 +22,7 @@ xz-utils \
 tk-dev \
 libffi-dev \
 liblzma-dev \
-python-openssl
+python3-openssl
 
 echo "Runnning the pyenv installation script..."
 if [[ -d "${HOME}/.pyenv" ]]
