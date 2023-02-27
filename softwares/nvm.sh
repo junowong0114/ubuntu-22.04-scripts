@@ -13,8 +13,10 @@ if [[ -z "${NVM_VERSION}" ]]; then
     exit 1
 fi
 
+print_title.sh "Installing nvm"
+
 # install
-curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
+curl -so- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
 
 # install node
 export NVM_DIR="$HOME/.nvm"

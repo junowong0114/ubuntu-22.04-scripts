@@ -4,19 +4,21 @@ set -eo pipefail
 while getopts d: flag
 do
     case "${flag}" in
-        d) DIR_PATH=${OPTARG};;
+        d) PROJECT_ROOT=${OPTARG};;
     esac
 done
 
-if [[ -z "${DIR_PATH}" ]]; then
-    echo "Error: Option -d (DIR_PATH) cannot be empty, exiting with status 1"
+if [[ -z "${PROJECT_ROOT}" ]]; then
+    echo "Error: Option -d (PROJECT_ROOT) cannot be empty, exiting with status 1"
     exit 1
 fi
 
+print_title.sh "Installing AWS cli"
+
 # install
-TMP_DIR="${DIR_PATH}/tmp"
+TMP_DIR="${PROJECT_ROOT}/tmp"
 mkdir -p "${TMP_DIR}"
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "${TMP_DIR}/awscliv2.zip"
+curl -s "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "${TMP_DIR}/awscliv2.zip"
 unzip -q "${TMP_DIR}/awscliv2.zip" -d "${TMP_DIR}"
 
 AWS_BIN=$(command -v aws || true)
