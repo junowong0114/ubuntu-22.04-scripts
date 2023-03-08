@@ -23,7 +23,7 @@ EXISTED=$(ls "${BINARY_DIR}" | grep "${BINARY_FOLDER}" || true)
 if [[ -z "${EXISTED}" ]]; then
     echo "k9s-${K9S_VERSION} does not exist, install now"
     mkdir -p "${BINARY_FULL_PATH}"
-    wget -qO- "https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_Linux_x86_64.tar.gz" | tar zxv -C "${BINARY_FULL_PATH}"
+    wget -qO- "https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_Linux_arm64.tar.gz" | tar zxv -C "${BINARY_FULL_PATH}"
 else
     echo "k9s-${K9S_VERSION} already exists, skip installation"
 fi
