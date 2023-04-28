@@ -23,6 +23,7 @@ tfenv.sh
 k9s.sh -v $K9S_VERSION
 pyenv.sh
 sdkman.sh
+maven.sh -v $MAVEN_VERSION
 
 # install runtimes
 python.sh -v $PYTHON_VERSIONS
