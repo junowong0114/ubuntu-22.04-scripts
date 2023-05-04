@@ -14,20 +14,21 @@ sudo apt install -yqq jq zip unzip
 printf "\nFinished installing/updating Linux packages\n\n"
 
 # install softwares
-PATH=${PATH} nvm.sh -v $NVM_VERSION
+# PATH=${PATH} nvm.sh -v $NVM_VERSION
 npm install --global yarn
 PATH=${PATH} aws-cli.sh -d $PROJECT_ROOT
 PATH=${PATH} kubectl.sh -d $PROJECT_ROOT -v $KUBECTL_VERSIONS -u $DEFAULT_KUBECTL_VERSION
-helm.sh -d $PROJECT_ROOT -v $HELM_VERSIONS -u $DEFAULT_HELM_VERSION
-tfenv.sh
-k9s.sh -v $K9S_VERSION
-pyenv.sh
-sdkman.sh
-maven.sh -v $MAVEN_VERSION
+PATH=${PATH} helm.sh -d $PROJECT_ROOT -v $HELM_VERSIONS -u $DEFAULT_HELM_VERSION
+PATH=${PATH} tfenv.sh
+PATH=${PATH} k9s.sh -v $K9S_VERSION
+PATH=${PATH} pyenv.sh
+PATH=${PATH} sdkman.sh
+PATH=${PATH} maven.sh -v $MAVEN_VERSION
+PATH=${PATH} ansible.sh
 
 # install runtimes
-python.sh -v $PYTHON_VERSIONS
-java_sdk.sh -v $JAVA_SDK_VERSIONS
+PATH=${PATH} python.sh -v $PYTHON_VERSIONS
+PATH=${PATH} java_sdk.sh -v $JAVA_SDK_VERSIONS
 
 # configure git
 git config --global user.email "$GIT_USER_EMAIL"

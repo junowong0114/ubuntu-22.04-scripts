@@ -21,6 +21,8 @@ if [[ -z "${VER_ARG}" ]]; then
     exit 1
 fi
 
+print_title.sh "Installing helm"
+
 BINARY_DIR="/opt/helm"
 sudo mkdir -p "${BINARY_DIR}"
 sudo chown $(id -u):$(id -g) "${BINARY_DIR}"

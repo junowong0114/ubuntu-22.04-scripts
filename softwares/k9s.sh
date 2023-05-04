@@ -13,6 +13,8 @@ if [[ -z "${K9S_VERSION}" ]]; then
     exit 1
 fi
 
+print_title.sh "Installing k9s"
+
 BINARY_DIR="/opt/k9s"
 sudo mkdir -p "${BINARY_DIR}"
 sudo chown $(id -u):$(id -g) "${BINARY_DIR}"

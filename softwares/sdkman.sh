@@ -10,7 +10,8 @@ if [[ ! -z $(sdk || true) ]]; then
     sdk update 
 fi
 
-${PROJECT_ROOT}/helpers/print_title.sh "Install SDKMAN!"
+${PROJECT_ROOT}/helpers/print_title.sh "Installing SDKMAN!"
+
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-printf "Installed SDKMAN!\n\n"
+echo "Installed SDKMAN!"

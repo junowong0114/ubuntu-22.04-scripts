@@ -31,11 +31,7 @@ then
 fi
 
 # Install Pythons
-cat <<EOF
-########################################
-Install Python with pyenv
-########################################
-EOF
+print_title.sh "Installing Python with pyenv"
 echo "User input versions: \"${VER_ARG}\""
 
 IFS=',' read -r -a PYTHON_VERSIONS <<< "${VER_ARG}"
@@ -66,4 +62,4 @@ done
 printf "\nPython installation complete\n"
 echo "Installed versions: $(ls -v $HOME/.pyenv/versions/ | tr '\n' ', ')"
 echo "Current version: $(python --version)"
-printf "Executable path: $(which python)\n\n"
+echo "Executable path: $(which python)"

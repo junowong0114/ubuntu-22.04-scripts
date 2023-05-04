@@ -34,6 +34,8 @@ else
     curl -sS https://pyenv.run | bash > /dev/null 2>&1 
 fi
 
+print_title.sh "Installing pyenv"
+
 find_string() {
     cat "$1" | grep "$2"
 }

@@ -1,6 +1,8 @@
 #/bin/bash
 set -eo pipefail
 
+print_title.sh "Installing tfenv"
+
 INSTALLED=$(command -v tfenv || true)
 if [[ ! -z "${INSTALLED}" ]]; then
     echo "tfenv version $(tfenv -v) is already installed, update now"
